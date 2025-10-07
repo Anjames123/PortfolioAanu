@@ -21,7 +21,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
             <h3 className="font-bold text-lg mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600">
-              Portfolio
+              Aibade James
             </h3>
             <p className="text-muted-foreground text-sm">
               Building digital experiences with passion and precision.
@@ -78,7 +78,7 @@ export default function Footer() {
 
         <div className="pt-8 border-t flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground flex items-center gap-2" data-testid="text-copyright">
-            © 2024 Portfolio. Designed & Built with <Heart className="h-4 w-4 text-red-500 fill-red-500 animate-pulse" /> and passion
+            © 2024 Aibade James. Designed & Built with <Heart className="h-4 w-4 text-red-500 fill-red-500 animate-pulse" /> and passion
           </p>
           <Button
             size="icon"

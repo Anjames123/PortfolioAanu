@@ -29,12 +29,12 @@ export default function HeroSection() {
               
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight animate-slide-up" data-testid="text-hero-title">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
-                  Software Engineer
+                  Aibade James
                 </span>
                 <br />
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary to-purple-500 animate-gradient">
                   <AnimatedText 
-                    texts={["& Web Designer", "& UI/UX Expert", "& Full Stack Dev"]} 
+                    texts={["Software Engineer", "Web Designer", "UI/UX Expert", "Full Stack Dev"]} 
                     className=""
                   />
                 </span>
@@ -73,8 +73,8 @@ export default function HeroSection() {
                 variant="secondary"
                 onClick={() => {
                   const link = document.createElement('a');
-                  link.href = '/resume.pdf';
-                  link.download = 'Resume.pdf';
+                  link.href = '/Aibade_James_Resume.pdf';
+                  link.download = 'Aibade_James_Resume.pdf';
                   link.click();
                 }}
                 className="group"
@@ -83,7 +83,7 @@ export default function HeroSection() {
                 <svg className="h-4 w-4 mr-2 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
-                Download Resume
+                Download CV
               </Button>
             </div>
 
