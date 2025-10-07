@@ -1,5 +1,10 @@
 import HeroSection from "../HeroSection";
+import { ThemeProvider } from "../ThemeProvider";
 
 export default function HeroSectionExample() {
-  return <HeroSection />;
+  return (
+    <ThemeProvider>
+      <HeroSection />
+    </ThemeProvider>
+  );
 }

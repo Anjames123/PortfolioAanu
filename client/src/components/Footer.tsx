@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, ArrowUp } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowUp, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Footer() {
@@ -14,11 +14,15 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t py-12">
-      <div className="container mx-auto px-6">
+    <footer className="border-t py-12 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent"></div>
+      
+      <div className="container mx-auto px-6 relative">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="font-bold text-lg mb-4">Portfolio</h3>
+            <h3 className="font-bold text-lg mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600">
+              Portfolio
+            </h3>
             <p className="text-muted-foreground text-sm">
               Building digital experiences with passion and precision.
             </p>
@@ -27,34 +31,16 @@ export default function Footer() {
           <div>
             <h3 className="font-bold text-lg mb-4">Quick Links</h3>
             <nav className="space-y-2">
-              <button
-                onClick={() => scrollToSection("about")}
-                className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
-                data-testid="footer-link-about"
-              >
-                About
-              </button>
-              <button
-                onClick={() => scrollToSection("skills")}
-                className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
-                data-testid="footer-link-skills"
-              >
-                Skills
-              </button>
-              <button
-                onClick={() => scrollToSection("projects")}
-                className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
-                data-testid="footer-link-projects"
-              >
-                Projects
-              </button>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
-                data-testid="footer-link-contact"
-              >
-                Contact
-              </button>
+              {["about", "skills", "projects", "contact"].map((section) => (
+                <button
+                  key={section}
+                  onClick={() => scrollToSection(section)}
+                  className="block text-sm text-muted-foreground hover:text-primary transition-all hover:translate-x-1 capitalize"
+                  data-testid={`footer-link-${section}`}
+                >
+                  {section}
+                </button>
+              ))}
             </nav>
           </div>
 
@@ -65,7 +51,7 @@ export default function Footer() {
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                className="text-muted-foreground hover:text-primary transition-all hover:scale-110 transform"
                 data-testid="footer-link-github"
               >
                 <Github className="h-5 w-5" />
@@ -74,14 +60,14 @@ export default function Footer() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                className="text-muted-foreground hover:text-primary transition-all hover:scale-110 transform"
                 data-testid="footer-link-linkedin"
               >
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
                 href="mailto:contact@example.com"
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                className="text-muted-foreground hover:text-primary transition-all hover:scale-110 transform"
                 data-testid="footer-link-email"
               >
                 <Mail className="h-5 w-5" />
@@ -91,16 +77,17 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 border-t flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground" data-testid="text-copyright">
-            © 2024 Portfolio. Designed & Built with passion
+          <p className="text-sm text-muted-foreground flex items-center gap-2" data-testid="text-copyright">
+            © 2024 Portfolio. Designed & Built with <Heart className="h-4 w-4 text-red-500 fill-red-500 animate-pulse" /> and passion
           </p>
           <Button
             size="icon"
             variant="outline"
             onClick={scrollToTop}
+            className="hover:scale-110 transition-transform group"
             data-testid="button-scroll-top"
           >
-            <ArrowUp className="h-4 w-4" />
+            <ArrowUp className="h-4 w-4 group-hover:-translate-y-1 transition-transform" />
           </Button>
         </div>
       </div>

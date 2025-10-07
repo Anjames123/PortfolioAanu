@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
+import ScrollReveal from "./ScrollReveal";
 
 import ecommerceImg from "@assets/generated_images/E-commerce_project_mockup_1dfea28f.png";
 import mobileAppImg from "@assets/generated_images/Mobile_app_project_mockup_235b9cef.png";
@@ -72,65 +73,81 @@ export default function ProjectsSection() {
     : projects.filter((p) => p.category === activeCategory);
 
   return (
-    <section id="projects" className="py-20 md:py-32">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4" data-testid="text-projects-title">
-            Featured Projects
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto" data-testid="text-projects-subtitle">
-            A selection of projects showcasing my development and design expertise
-          </p>
-        </div>
+    <section id="projects" className="py-20 md:py-32 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-500/5 to-transparent"></div>
+      
+      <div className="container mx-auto px-6 relative">
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/60" data-testid="text-projects-title">
+              Featured Projects
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto" data-testid="text-projects-subtitle">
+              A selection of projects showcasing my development and design expertise
+            </p>
+          </div>
+        </ScrollReveal>
 
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {categories.map((category) => (
-            <Button
-              key={category}
-              variant={activeCategory === category ? "default" : "outline"}
-              onClick={() => setActiveCategory(category)}
-              data-testid={`button-filter-${category.toLowerCase().replace(" ", "-")}`}
-            >
-              {category}
-            </Button>
-          ))}
-        </div>
+        <ScrollReveal delay={100}>
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
+            {categories.map((category) => (
+              <Button
+                key={category}
+                variant={activeCategory === category ? "default" : "outline"}
+                onClick={() => setActiveCategory(category)}
+                className="transition-all hover:scale-105"
+                data-testid={`button-filter-${category.toLowerCase().replace(" ", "-")}`}
+              >
+                {category}
+              </Button>
+            ))}
+          </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-          {filteredProjects.map((project) => (
-            <Card key={project.id} className="overflow-hidden hover-elevate group" data-testid={`card-project-${project.id}`}>
-              <div className="relative overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                  data-testid={`img-project-${project.id}`}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
-                  <Button size="sm" variant="secondary" data-testid={`button-view-project-${project.id}`}>
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    View Project
-                  </Button>
+          {filteredProjects.map((project, idx) => (
+            <ScrollReveal key={project.id} delay={idx * 100}>
+              <Card className="overflow-hidden hover-elevate group relative" data-testid={`card-project-${project.id}`}>
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary to-purple-600 rounded-xl blur opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                <div className="relative bg-card rounded-xl overflow-hidden">
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-48 object-cover transition-all duration-500 group-hover:scale-110 group-hover:rotate-1"
+                      data-testid={`img-project-${project.id}`}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end justify-center pb-6 gap-2">
+                      <Button size="sm" variant="secondary" className="shadow-lg backdrop-blur-sm" data-testid={`button-view-project-${project.id}`}>
+                        <ExternalLink className="h-4 w-4 mr-2" />
+                        View
+                      </Button>
+                      <Button size="sm" variant="secondary" className="shadow-lg backdrop-blur-sm">
+                        <Github className="h-4 w-4 mr-2" />
+                        Code
+                      </Button>
+                    </div>
+                  </div>
+                  <CardContent className="p-6 space-y-4">
+                    <div>
+                      <h3 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors" data-testid={`text-project-title-${project.id}`}>
+                        {project.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground" data-testid={`text-project-description-${project.id}`}>
+                        {project.description}
+                      </p>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag, tagIdx) => (
+                        <Badge key={tagIdx} variant="secondary" className="transition-transform hover:scale-105" data-testid={`badge-tag-${project.id}-${tagIdx}`}>
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
                 </div>
-              </div>
-              <CardContent className="p-6 space-y-4">
-                <div>
-                  <h3 className="font-bold text-lg mb-2" data-testid={`text-project-title-${project.id}`}>
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground" data-testid={`text-project-description-${project.id}`}>
-                    {project.description}
-                  </p>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag, idx) => (
-                    <Badge key={idx} variant="secondary" data-testid={`badge-tag-${project.id}-${idx}`}>
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+              </Card>
+            </ScrollReveal>
           ))}
         </div>
       </div>

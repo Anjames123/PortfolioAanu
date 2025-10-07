@@ -1,5 +1,10 @@
 import ContactSection from "../ContactSection";
+import { ThemeProvider } from "../ThemeProvider";
 
 export default function ContactSectionExample() {
-  return <ContactSection />;
+  return (
+    <ThemeProvider>
+      <ContactSection />
+    </ThemeProvider>
+  );
 }
