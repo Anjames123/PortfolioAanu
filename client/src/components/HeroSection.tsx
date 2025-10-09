@@ -107,11 +107,7 @@ export default function HeroSection() {
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
-<<<<<<< HEAD
-                href="ajibadejames19@gmail.com"
-=======
                 href="mailto:ajibadejames19@gmail.com"
->>>>>>> refs/remotes/origin/main
                 className="text-muted-foreground hover:text-primary transition-all hover:scale-110 transform"
                 data-testid="link-email"
               >
