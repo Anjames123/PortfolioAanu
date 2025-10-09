@@ -48,7 +48,7 @@ export default function Footer() {
             <h3 className="font-bold text-lg mb-4">Connect</h3>
             <div className="flex items-center gap-4">
               <a
-                href="https://github.com"
+                href="https://github.com/Anjames123"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-all hover:scale-110 transform"
@@ -66,7 +66,7 @@ export default function Footer() {
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
-                href="mailto:contact@example.com"
+                href="mailto:ajibadejames19@gmail.com"
                 className="text-muted-foreground hover:text-primary transition-all hover:scale-110 transform"
                 data-testid="footer-link-email"
               >

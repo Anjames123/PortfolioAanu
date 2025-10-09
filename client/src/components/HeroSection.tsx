@@ -89,7 +89,7 @@ export default function HeroSection() {
 
             <div className="flex items-center gap-4 pt-4 animate-slide-up" style={{ animationDelay: "0.3s" }}>
               <a
-                href="https://github.com"
+                href="https://github.com/Anjames123"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-all hover:scale-110 transform"
@@ -107,7 +107,7 @@ export default function HeroSection() {
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
-                href="mailto:contact@example.com"
+                href="mailto:ajibadejames19@gmail.com"
                 className="text-muted-foreground hover:text-primary transition-all hover:scale-110 transform"
                 data-testid="link-email"
               >
