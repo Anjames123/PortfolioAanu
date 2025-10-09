@@ -1,6 +1,6 @@
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Card } from "@/components/ui/card";
-import aboutImage from "@assets/WhatsApp Image 2025-10-09 at 07.52.40_673c5578_1759992976808.jpg";
+import aboutImage from "@assets/generated_images/AI_professional_developer_headshot_27b238ee.png";
 import ScrollReveal from "./ScrollReveal";
 import { Award, Code, Rocket } from "lucide-react";
 
