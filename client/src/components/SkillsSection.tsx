@@ -7,13 +7,13 @@ const skillCategories = [
   {
     icon: Code2,
     title: "Frontend Development",
-    skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Vue.js"],
+    skills: ["HTML", "JavaScript", "React", "TypeScript", "Next.js", "Tailwind CSS", "Vue.js"],
     gradient: "from-blue-500 to-cyan-500",
   },
   {
     icon: Database,
     title: "Backend Development",
-    skills: ["Node.js", "Express", "PostgreSQL", "MongoDB", "GraphQL"],
+    skills: ["Python", "PHP", "Node.js", "Express", "PostgreSQL", "MongoDB", "GraphQL"],
     gradient: "from-green-500 to-emerald-500",
   },
   {
