@@ -13,6 +13,8 @@ import {
 } from "@/components/ui/select";
 import { Mail, MapPin, Clock, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useMutation } from "@tanstack/react-query";
+import { apiRequest } from "@/lib/queryClient";
 import ScrollReveal from "./ScrollReveal";
 
 export default function ContactSection() {
@@ -23,21 +25,36 @@ export default function ContactSection() {
     projectType: "",
     message: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const contactMutation = useMutation({
+    mutationFn: async (data: typeof formData) => {
+      return await apiRequest("/api/contact", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    },
+    onSuccess: (response: any) => {
+      toast({
+        title: "Message sent!",
+        description: response.message || "Thank you for reaching out. I'll get back to you soon.",
+      });
+      setFormData({ name: "", email: "", projectType: "", message: "" });
+    },
+    onError: (error: any) => {
+      toast({
+        title: "Failed to send message",
+        description: error.message || "Please try again later.",
+        variant: "destructive",
+      });
+    },
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    console.log("Form submitted:", formData);
-    
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
-      });
-      setFormData({ name: "", email: "", projectType: "", message: "" });
-      setIsSubmitting(false);
-    }, 1000);
+    contactMutation.mutate(formData);
   };
 
   return (
@@ -130,11 +147,11 @@ export default function ContactSection() {
                   <Button 
                     type="submit" 
                     className="w-full group relative overflow-hidden" 
-                    disabled={isSubmitting}
+                    disabled={contactMutation.isPending}
                     data-testid="button-submit"
                   >
                     <span className="relative z-10">
-                      {isSubmitting ? "Sending..." : "Send Message"}
+                      {contactMutation.isPending ? "Sending..." : "Send Message"}
                     </span>
                     <Send className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Button>

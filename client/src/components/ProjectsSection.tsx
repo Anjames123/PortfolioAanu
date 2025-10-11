@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
+import ProjectDetailModal from "./ProjectDetailModal";
 
 import ecommerceImg from "@assets/generated_images/E-commerce_project_mockup_1dfea28f.png";
 import mobileAppImg from "@assets/generated_images/Mobile_app_project_mockup_235b9cef.png";
@@ -23,6 +24,10 @@ const projects = [
     description: "Modern e-commerce solution with real-time inventory and payment processing",
     image: ecommerceImg,
     tags: ["React", "Node.js", "PostgreSQL", "Stripe"],
+    longDescription: "A comprehensive e-commerce platform built with modern technologies to deliver seamless shopping experiences. Features include real-time inventory management, secure payment processing, and responsive design.",
+    challenge: "Building a scalable e-commerce solution that handles high traffic, processes secure payments, and manages complex inventory in real-time.",
+    solution: "Implemented a microservices architecture using React for the frontend and Node.js for the backend. Integrated Stripe for secure payment processing and PostgreSQL for robust data management.",
+    outcome: "Successfully launched platform serving 10,000+ users with 99.9% uptime. Reduced page load time by 40% and increased conversion rate by 25%.",
   },
   {
     id: 2,
@@ -94,16 +99,24 @@ const categories = ["All", "Full Stack", "Web Design", "Mobile"];
 
 export default function ProjectsSection() {
   const [activeCategory, setActiveCategory] = useState("All");
+  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const filteredProjects = activeCategory === "All"
     ? projects
     : projects.filter((p) => p.category === activeCategory);
 
+  const handleProjectClick = (project: typeof projects[0]) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
   return (
-    <section id="projects" className="py-20 md:py-32 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-500/5 to-transparent"></div>
-      
-      <div className="container mx-auto px-6 relative">
+    <>
+      <section id="projects" className="py-20 md:py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-500/5 to-transparent"></div>
+        
+        <div className="container mx-auto px-6 relative">
         <ScrollReveal>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/60" data-testid="text-projects-title">
@@ -134,13 +147,18 @@ export default function ProjectsSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {filteredProjects.map((project, idx) => (
             <ScrollReveal key={project.id} delay={idx * 100}>
-              <Card className="overflow-hidden hover-elevate group relative" data-testid={`card-project-${project.id}`}>
+              <Card 
+                className="overflow-hidden hover-elevate group relative cursor-pointer" 
+                onClick={() => handleProjectClick(project)}
+                data-testid={`card-project-${project.id}`}
+              >
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary to-purple-600 rounded-xl blur opacity-0 group-hover:opacity-20 transition duration-500"></div>
                 <div className="relative bg-card rounded-xl overflow-hidden">
                   <div className="relative overflow-hidden">
                     <img
                       src={project.image}
                       alt={project.title}
+                      loading="lazy"
                       className="w-full h-48 object-cover transition-all duration-500 group-hover:scale-110 group-hover:rotate-1"
                       data-testid={`img-project-${project.id}`}
                     />
@@ -179,5 +197,12 @@ export default function ProjectsSection() {
         </div>
       </div>
     </section>
+    
+    <ProjectDetailModal
+      project={selectedProject}
+      isOpen={isModalOpen}
+      onClose={() => setIsModalOpen(false)}
+    />
+    </>
   );
 }

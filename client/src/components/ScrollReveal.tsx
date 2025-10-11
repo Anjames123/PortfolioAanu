@@ -36,6 +36,7 @@ export default function ScrollReveal({ children, className = "", delay = 0 }: Sc
           ? "opacity-100 translate-y-0"
           : "opacity-0 translate-y-12"
       } ${className}`}
+      style={{ willChange: isVisible ? 'auto' : 'transform, opacity' }}
     >
       {children}
     </div>
