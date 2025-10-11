@@ -12,6 +12,7 @@ import portfolioImg from "@assets/generated_images/Portfolio_website_project_moc
 import taskManagementImg from "@assets/generated_images/Task_management_app_mockup_736091a1.png";
 import socialMediaImg from "@assets/generated_images/Social_media_platform_mockup_8ae26d3c.png";
 import jobPortalImg from "@assets/Screenshot 2025-08-08 212006_1760197174128.png";
+import aiChatbotImg from "@assets/Screenshot 2025-10-11 164411_1760197483907.png";
 
 const projects = [
   {
@@ -69,6 +70,14 @@ const projects = [
     description: "Career platform for discovering job opportunities with advanced search and application tracking",
     image: jobPortalImg,
     tags: ["PHP", "JavaScript", "HTML", "MySQL"],
+  },
+  {
+    id: 8,
+    title: "AI Chatbot",
+    category: "Full Stack",
+    description: "Intelligent chatbot with multi-model AI support, conversation history, and context-aware responses",
+    image: aiChatbotImg,
+    tags: ["Python", "OpenAI", "Anthropic", "Flask"],
   },
 ];
 
