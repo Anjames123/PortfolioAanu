@@ -11,6 +11,7 @@ import dashboardImg from "@assets/generated_images/Analytics_dashboard_project_m
 import portfolioImg from "@assets/generated_images/Portfolio_website_project_mockup_d42c0201.png";
 import taskManagementImg from "@assets/generated_images/Task_management_app_mockup_736091a1.png";
 import socialMediaImg from "@assets/generated_images/Social_media_platform_mockup_8ae26d3c.png";
+import jobPortalImg from "@assets/Screenshot 2025-08-08 212006_1760197174128.png";
 
 const projects = [
   {
@@ -60,6 +61,14 @@ const projects = [
     description: "Community-driven platform with content sharing and social features",
     image: socialMediaImg,
     tags: ["React", "GraphQL", "MongoDB"],
+  },
+  {
+    id: 7,
+    title: "Job Portal",
+    category: "Full Stack",
+    description: "Career platform for discovering job opportunities with advanced search and application tracking",
+    image: jobPortalImg,
+    tags: ["PHP", "JavaScript", "HTML", "MySQL"],
   },
 ];
 
