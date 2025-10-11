@@ -88,6 +88,14 @@ const projects = [
     image: kStyleAiImg,
     tags: ["Python", "TensorFlow", "React", "Computer Vision"],
   },
+  {
+    id: 10,
+    title: "ChatPyBot",
+    category: "Full Stack",
+    description: "Multi-LLM chatbot with Streamlit UI supporting OpenAI, Anthropic, and Gemini APIs with SQLite storage",
+    image: aiChatbotImg,
+    tags: ["Python", "Streamlit", "SQLAlchemy", "Multi-AI"],
+  },
 ];
 
 const categories = ["All", "Full Stack", "Web Design", "Mobile"];
