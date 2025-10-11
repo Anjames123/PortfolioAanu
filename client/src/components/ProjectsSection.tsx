@@ -74,14 +74,6 @@ const projects = [
   },
   {
     id: 8,
-    title: "AI Chatbot",
-    category: "Full Stack",
-    description: "Intelligent chatbot with multi-model AI support, conversation history, and context-aware responses",
-    image: aiChatbotImg,
-    tags: ["Python", "OpenAI", "Anthropic", "Flask"],
-  },
-  {
-    id: 9,
     title: "K-Style AI Beauty",
     category: "Full Stack",
     description: "AI-powered beauty platform for personalized color analysis and K-drama styling recommendations",
