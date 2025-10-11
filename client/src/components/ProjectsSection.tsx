@@ -13,6 +13,7 @@ import taskManagementImg from "@assets/generated_images/Task_management_app_mock
 import socialMediaImg from "@assets/generated_images/Social_media_platform_mockup_8ae26d3c.png";
 import jobPortalImg from "@assets/Screenshot 2025-08-08 212006_1760197174128.png";
 import aiChatbotImg from "@assets/Screenshot 2025-10-11 164411_1760197483907.png";
+import kStyleAiImg from "@assets/Screenshot 2025-07-27 093723_1760197688959.png";
 
 const projects = [
   {
@@ -78,6 +79,14 @@ const projects = [
     description: "Intelligent chatbot with multi-model AI support, conversation history, and context-aware responses",
     image: aiChatbotImg,
     tags: ["Python", "OpenAI", "Anthropic", "Flask"],
+  },
+  {
+    id: 9,
+    title: "K-Style AI Beauty",
+    category: "Full Stack",
+    description: "AI-powered beauty platform for personalized color analysis and K-drama styling recommendations",
+    image: kStyleAiImg,
+    tags: ["Python", "TensorFlow", "React", "Computer Vision"],
   },
 ];
 
