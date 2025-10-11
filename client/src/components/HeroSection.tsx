@@ -98,7 +98,7 @@ export default function HeroSection() {
                 <Github className="h-5 w-5" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/aanuoluwa-ajibade-744870261"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-all hover:scale-110 transform"
