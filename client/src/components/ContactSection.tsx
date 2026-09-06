@@ -86,6 +86,7 @@ export default function ContactSection() {
                       placeholder="Your name"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      minLength={2}
                       required
                       className="transition-all focus:scale-[1.01]"
                       data-testid="input-name"
@@ -133,10 +134,14 @@ export default function ContactSection() {
                       rows={5}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      minLength={10}
                       required
                       className="transition-all focus:scale-[1.01]"
                       data-testid="input-message"
                     />
+                    <p className="text-xs text-muted-foreground">
+                      Please include at least 10 characters.
+                    </p>
                   </div>
 
                   <Button 
