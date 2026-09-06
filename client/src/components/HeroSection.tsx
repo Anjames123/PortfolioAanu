@@ -29,7 +29,7 @@ export default function HeroSection() {
               
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight animate-slide-up" data-testid="text-hero-title">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
-                  Aibade James
+                  Ajibade James
                 </span>
                 <br />
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary to-purple-500 animate-gradient">

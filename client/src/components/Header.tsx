@@ -39,7 +39,7 @@ export default function Header() {
             className="text-xl font-bold tracking-tight hover-elevate active-elevate-2 px-2 py-1 rounded-md bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent transition-all hover:scale-105"
             data-testid="button-logo"
           >
-            Aibade James
+            Ajibade James
           </button>
 
           <nav className="hidden md:flex items-center gap-8">
