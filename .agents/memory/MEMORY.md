@@ -1,0 +1,1 @@
+- [External deployment lockfiles](external-deployment-lockfiles.md) — Replit-generated lockfiles may contain internal registry URLs that must be portable for outside hosts.
