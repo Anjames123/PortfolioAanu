@@ -5,6 +5,7 @@ import {
   AlignmentType,
   Document,
   HeadingLevel,
+  ImageRun,
   Packer,
   Paragraph,
   TextRun,
@@ -111,6 +112,11 @@ const resume = {
 };
 
 const outputDir = path.resolve("client/public");
+const profilePhotoPath = path.resolve("attached_assets/aanu_1788764369819.jpg");
+if (!fs.existsSync(profilePhotoPath)) {
+  throw new Error(`Profile photo not found: ${profilePhotoPath}`);
+}
+const profilePhoto = fs.readFileSync(profilePhotoPath);
 fs.mkdirSync(outputDir, { recursive: true });
 
 function renderPdf() {
@@ -124,6 +130,10 @@ function renderPdf() {
 
   doc.setFillColor(...navy);
   doc.rect(0, 0, pageWidth, 112, "F");
+  doc.setDrawColor(...blue);
+  doc.setLineWidth(1);
+  doc.rect(516, 16, 60, 80);
+  doc.addImage(profilePhoto.toString("base64"), "JPEG", 518, 18, 56, 76);
   doc.setTextColor(255, 255, 255);
   doc.setFont("helvetica", "bold");
   doc.setFontSize(24);
@@ -135,7 +145,7 @@ function renderPdf() {
   doc.setTextColor(226, 232, 240);
   doc.setFontSize(8.5);
   doc.text(resume.contact.join("  |  "), margin, 91, {
-    maxWidth: contentWidth,
+    maxWidth: 450,
   });
 
   y = 140;
@@ -229,6 +239,16 @@ async function renderDocx() {
     });
 
   const children: Paragraph[] = [
+    new Paragraph({
+      alignment: AlignmentType.CENTER,
+      children: [
+        new ImageRun({
+          data: profilePhoto,
+          transformation: { width: 72, height: 72 },
+        }),
+      ],
+      spacing: { after: 60 },
+    }),
     new Paragraph({
       alignment: AlignmentType.CENTER,
       children: [new TextRun({ text: resume.name, bold: true, size: 34 })],
