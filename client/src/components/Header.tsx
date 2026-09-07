@@ -32,26 +32,34 @@ export default function Header() {
           : "border-b border-transparent bg-background/80 backdrop-blur-md"
       }`}
     >
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto max-w-7xl px-5 py-4 md:px-8">
         <div className="flex items-center justify-between gap-4">
           <button
             onClick={() => scrollToSection("hero")}
-            className="text-xl font-bold tracking-tight hover-elevate active-elevate-2 px-2 py-1 rounded-md bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent transition-all hover:scale-105"
+            className="group flex items-center gap-3 rounded-md px-1 py-1 text-left transition-transform hover:scale-[1.02]"
             data-testid="button-logo"
           >
-            Ajibade James
+            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-sm font-black text-primary-foreground shadow-lg shadow-primary/20 transition-transform group-hover:rotate-6">
+              AJ
+            </span>
+            <span className="hidden text-sm font-semibold tracking-tight sm:block">
+              Ajibade James
+              <span className="mt-0.5 block text-[10px] font-mono uppercase tracking-[0.22em] text-muted-foreground">
+                Engineer / Designer
+              </span>
+            </span>
           </button>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-7">
             {["about", "skills", "projects", "contact"].map((section) => (
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
-                className="text-sm text-muted-foreground hover:text-foreground transition-all hover:scale-105 capitalize relative group"
+                className="group relative text-xs font-medium uppercase tracking-[0.16em] text-muted-foreground transition-colors hover:text-foreground"
                 data-testid={`link-${section}`}
               >
                 {section}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+                <span className="absolute -bottom-2 left-0 h-px w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
           </nav>

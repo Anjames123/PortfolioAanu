@@ -113,29 +113,32 @@ export default function ProjectsSection() {
 
   return (
     <>
-      <section id="projects" className="py-20 md:py-32 relative overflow-hidden">
+      <section id="projects" className="relative overflow-hidden py-24 md:py-36">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-500/5 to-transparent"></div>
         
-        <div className="container mx-auto px-6 relative">
+        <div className="container relative mx-auto max-w-7xl px-5 md:px-8">
         <ScrollReveal>
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/60" data-testid="text-projects-title">
-              Featured Projects
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto" data-testid="text-projects-subtitle">
-              A selection of projects showcasing my development and design expertise
+          <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <p className="section-kicker mb-5">Selected work / 01—09</p>
+              <h2 className="display-type text-4xl font-bold tracking-[-.045em] md:text-6xl" data-testid="text-projects-title">
+                Work that moves<br /><span className="text-primary">ideas forward.</span>
+              </h2>
+            </div>
+            <p className="max-w-sm text-base leading-relaxed text-muted-foreground md:pb-1" data-testid="text-projects-subtitle">
+              A selection of products and interfaces designed to be useful, memorable, and beautifully engineered.
             </p>
           </div>
         </ScrollReveal>
 
         <ScrollReveal delay={100}>
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+          <div className="mb-12 flex flex-wrap gap-2">
             {categories.map((category) => (
               <Button
                 key={category}
                 variant={activeCategory === category ? "default" : "outline"}
                 onClick={() => setActiveCategory(category)}
-                className="transition-all hover:scale-105"
+                className="rounded-full px-4 text-xs uppercase tracking-[0.12em] transition-all hover:-translate-y-0.5"
                 data-testid={`button-filter-${category.toLowerCase().replace(" ", "-")}`}
               >
                 {category}
@@ -146,9 +149,9 @@ export default function ProjectsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {filteredProjects.map((project, idx) => (
-            <ScrollReveal key={project.id} delay={idx * 100}>
+            <ScrollReveal key={project.id} delay={idx * 100} className={idx === 0 ? "lg:col-span-2" : ""}>
               <Card 
-                className="overflow-hidden hover-elevate group relative cursor-pointer" 
+                className={`group relative cursor-pointer overflow-hidden rounded-2xl border-border/70 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 ${idx === 0 ? "lg:grid lg:grid-cols-[1.35fr_1fr]" : ""}`}
                 onClick={() => handleProjectClick(project)}
                 data-testid={`card-project-${project.id}`}
               >
@@ -159,7 +162,7 @@ export default function ProjectsSection() {
                       src={project.image}
                       alt={project.title}
                       loading="lazy"
-                      className="w-full h-48 object-cover transition-all duration-500 group-hover:scale-110 group-hover:rotate-1"
+                      className={`w-full object-cover transition-all duration-700 group-hover:scale-105 ${idx === 0 ? "h-64 lg:h-full lg:min-h-[22rem]" : "h-56"}`}
                       data-testid={`img-project-${project.id}`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end justify-center pb-6 gap-2">
@@ -173,9 +176,13 @@ export default function ProjectsSection() {
                       </Button>
                     </div>
                   </div>
-                  <CardContent className="p-6 space-y-4">
+                  <CardContent className={`space-y-4 p-6 md:p-7 ${idx === 0 ? "lg:flex lg:flex-col lg:justify-center" : ""}`}>
                     <div>
-                      <h3 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors" data-testid={`text-project-title-${project.id}`}>
+                      <div className="mb-4 flex items-center justify-between gap-4">
+                        <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-primary">{project.category}</span>
+                        <span className="text-xs font-mono text-muted-foreground">0{idx + 1}</span>
+                      </div>
+                      <h3 className="mb-2 text-xl font-semibold tracking-tight transition-colors group-hover:text-primary" data-testid={`text-project-title-${project.id}`}>
                         {project.title}
                       </h3>
                       <p className="text-sm text-muted-foreground" data-testid={`text-project-description-${project.id}`}>
