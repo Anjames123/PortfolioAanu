@@ -1,6 +1,6 @@
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Card } from "@/components/ui/card";
-import aboutImage from "@assets/1769264934968_1788764500233.jpg";
+import aboutImage from "@assets/aj_image_enhanced.jpg";
 import ScrollReveal from "./ScrollReveal";
 import { Award, Code, Rocket } from "lucide-react";
 
