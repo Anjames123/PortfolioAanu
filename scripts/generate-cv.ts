@@ -112,7 +112,7 @@ const resume = {
 };
 
 const outputDir = path.resolve("client/public");
-const profilePhotoPath = path.resolve("attached_assets/aanu_1788764369819.jpg");
+const profilePhotoPath = path.resolve("attached_assets/1769264934968_1788764500233.jpg");
 if (!fs.existsSync(profilePhotoPath)) {
   throw new Error(`Profile photo not found: ${profilePhotoPath}`);
 }
