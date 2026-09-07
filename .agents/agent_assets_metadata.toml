@@ -1,0 +1,30 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "eIv8VzL7WBHfC9huO4mjk"
+uri = "file://client/public/Ajibade_James_CV.pdf"
+type = "pdf"
+title = "Ajibade James CV (Expanded PDF)"
+description = "Expanded one-page project-focused CV with nine portfolio projects and the Python web-development stack."
+logical_id = "1c111e98-4652-4c48-a870-0ee7aa51dbee"
+content_hash = "sha256:86a09f8c7fc2a638dc19c37cf3b62b046d87955993f63c9ef74fd93380c43297"
+size = 9457
+mtime_ms = 1788763860785
+storage_uri = "gcs://replit-rams-assets-riker/rams/assets/repl:f4ef4fe5-97f3-4cff-9fcd-0395fcd06e46/1c111e98-4652-4c48-a870-0ee7aa51dbee/c7cfde75-7f1d-4327-89d8-43107ca7c0dc"
+storage_version_token = "1788763895303457"
+content_type = "application/pdf"
+
+[[outputs]]
+id = "nEz9l7m8PdeYrYZANEIqS"
+uri = "file://client/public/Ajibade_James_CV.docx"
+type = "word_document"
+title = "Ajibade James CV (Expanded DOCX)"
+description = "Editable expanded DOCX version of the project-focused CV."
+logical_id = "cfb59c30-d4a3-4756-81bc-aba242b4e748"
+content_hash = "sha256:39d8c3946ebff886f43693f0bc6e03c7709b4053afeb0ed11b932beef03ecd56"
+size = 10087
+mtime_ms = 1788763860765
+storage_uri = "gcs://replit-rams-assets-riker/rams/assets/repl:f4ef4fe5-97f3-4cff-9fcd-0395fcd06e46/cfb59c30-d4a3-4756-81bc-aba242b4e748/70835430-ec2a-4f53-9a7a-087ad0fc37e2"
+storage_version_token = "1788763895887439"
+content_type = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"

@@ -73,8 +73,8 @@ export default function HeroSection() {
                 variant="secondary"
                 onClick={() => {
                   const link = document.createElement('a');
-                  link.href = '/Aibade_James_Resume.pdf';
-                  link.download = 'Aibade_James_Resume.pdf';
+                  link.href = '/Ajibade_James_CV.pdf';
+                  link.download = 'Ajibade_James_CV.pdf';
                   link.click();
                 }}
                 className="group"
