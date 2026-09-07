@@ -13,17 +13,21 @@ const achievements = [
 
 export default function AchievementBadges() {
   return (
-    <section className="py-12 bg-muted/30 relative overflow-hidden">
-      <div className="container mx-auto px-6">
+    <section className="relative overflow-hidden bg-muted/20 py-10">
+      <div className="container mx-auto max-w-7xl px-5 md:px-8">
         <ScrollReveal>
-          <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+          <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+            <p className="shrink-0 text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground">
+              Trusted tools & signals
+            </p>
+            <div className="flex flex-wrap gap-2 md:justify-end">
             {achievements.map((achievement, idx) => {
               const Icon = achievement.icon;
               return (
                 <Badge
                   key={idx}
                   variant="secondary"
-                  className="px-4 py-2 text-sm hover-elevate group relative overflow-hidden"
+                  className="group relative overflow-hidden rounded-full border-border/60 px-3 py-1.5 text-xs hover-elevate"
                   style={{ animationDelay: `${idx * 50}ms` }}
                 >
                   <div className={`absolute inset-0 bg-gradient-to-r ${achievement.color} opacity-0 group-hover:opacity-10 transition-opacity`}></div>
@@ -32,6 +36,7 @@ export default function AchievementBadges() {
                 </Badge>
               );
             })}
+            </div>
           </div>
         </ScrollReveal>
       </div>

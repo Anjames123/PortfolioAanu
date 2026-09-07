@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import CapabilitiesStrip from "@/components/CapabilitiesStrip";
 import AchievementBadges from "@/components/AchievementBadges";
 import AboutSection from "@/components/AboutSection";
 import SkillsSection from "@/components/SkillsSection";
@@ -18,6 +19,7 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
+        <CapabilitiesStrip />
         <AchievementBadges />
         <AboutSection />
         <SkillsSection />
