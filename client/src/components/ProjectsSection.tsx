@@ -7,7 +7,6 @@ import ScrollReveal from "./ScrollReveal";
 import ProjectDetailModal from "./ProjectDetailModal";
 
 import mobileAppImg from "@assets/generated_images/Mobile_app_project_mockup_235b9cef.png";
-import dashboardImg from "@assets/generated_images/Analytics_dashboard_project_mockup_2dcfc278.png";
 import portfolioImg from "@assets/generated_images/Portfolio_website_project_mockup_d42c0201.png";
 import aiChatbotImg from "@assets/Screenshot 2025-10-11 164411_1760197483907.png";
 import kStyleAiImg from "@assets/Screenshot 2025-07-27 093723_1760197688959.png";
@@ -65,19 +64,6 @@ const projects = [
     solution: "Created a responsive PHP site with a hero slider, section-based navigation, program content, events, gallery, and contact touchpoints.",
     outcome: "A clear digital front door for the school with an inviting, family-friendly presentation.",
   },
-  {
-    id: 5,
-    title: "PortfolioAanu",
-    category: "Full Stack",
-    description: "The portfolio platform itself — a React, TypeScript, and Express experience built to show the work behind the work.",
-    image: dashboardImg,
-    tags: ["React", "TypeScript", "Express", "Drizzle"],
-    repoUrl: "https://github.com/Anjames123/PortfolioAanu",
-    longDescription: "PortfolioAanu is the living portfolio experience: a full-stack site for presenting projects, skills, experience, and a working contact flow.",
-    challenge: "Making a personal portfolio feel like a real product rather than a list of links.",
-    solution: "Built a responsive React frontend with a TypeScript Express server, structured project stories, theme support, and a validated contact endpoint.",
-    outcome: "A distinct portfolio system that can evolve alongside the work it represents.",
-  },
 ];
 
 const categories = ["All", "Full Stack", "AI Product", "Web Design"];
@@ -105,7 +91,7 @@ export default function ProjectsSection() {
         <ScrollReveal>
           <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
-              <p className="section-kicker mb-5">Selected work / 01—09</p>
+              <p className="section-kicker mb-5">Selected work / 01—04</p>
               <h2 className="display-type text-4xl font-bold tracking-[-.045em] md:text-6xl" data-testid="text-projects-title">
                 Work that moves<br /><span className="text-primary">ideas forward.</span>
               </h2>
