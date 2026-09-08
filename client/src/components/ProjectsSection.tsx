@@ -110,9 +110,22 @@ export default function ProjectsSection() {
                 Work that moves<br /><span className="text-primary">ideas forward.</span>
               </h2>
             </div>
-            <p className="max-w-sm text-base leading-relaxed text-muted-foreground md:pb-1" data-testid="text-projects-subtitle">
-              A selection of products and interfaces designed to be useful, memorable, and beautifully engineered.
-            </p>
+            <div className="max-w-sm md:pb-1">
+              <p className="text-base leading-relaxed text-muted-foreground" data-testid="text-projects-subtitle">
+                A selection of products and interfaces designed to be useful, memorable, and beautifully engineered.
+              </p>
+              <a
+                href="https://github.com/Anjames123"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.16em] text-primary transition-colors hover:text-foreground"
+                data-testid="link-all-github-projects"
+              >
+                <Github className="h-4 w-4" />
+                Explore all repositories
+                <ExternalLink className="h-3.5 w-3.5" />
+              </a>
+            </div>
           </div>
         </ScrollReveal>
 
