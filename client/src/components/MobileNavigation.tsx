@@ -45,7 +45,7 @@ export default function MobileNavigation() {
 
   return (
     <nav
-      className={`md:hidden fixed bottom-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-lg border-t shadow-lg transition-transform duration-300 ${
+      className={`fixed bottom-0 left-0 right-0 z-50 border-t bg-card/95 shadow-lg backdrop-blur-lg transition-transform duration-300 md:hidden ${
         isVisible ? "translate-y-0" : "translate-y-full"
       }`}
     >
@@ -57,14 +57,15 @@ export default function MobileNavigation() {
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`flex flex-col items-center gap-1 px-4 py-2 rounded-lg transition-all ${
+               aria-label={`Navigate to ${item.label}`}
+               className={`relative flex flex-col items-center gap-1 rounded-lg px-4 py-2 transition-all ${
                 isActive
                   ? "text-primary scale-110"
                   : "text-muted-foreground hover:text-foreground"
               }`}
               data-testid={`mobile-nav-${item.id}`}
             >
-              <Icon className={`h-5 w-5 ${isActive ? "animate-bounce" : ""}`} />
+               <Icon className="h-5 w-5" />
               <span className="text-xs font-medium">{item.label}</span>
               {isActive && (
                 <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-primary rounded-full"></div>

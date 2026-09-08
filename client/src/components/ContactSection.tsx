@@ -53,26 +53,27 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-32 bg-muted/30 relative overflow-hidden">
+    <section id="contact" className="relative overflow-hidden bg-muted/30 py-24 md:py-36">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-purple-500/5"></div>
       
-      <div className="container mx-auto px-6 relative">
+      <div className="container relative mx-auto max-w-7xl px-5 md:px-8">
         <ScrollReveal>
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/60" data-testid="text-contact-title">
-              Get In Touch
+          <div className="mb-14 max-w-2xl">
+            <p className="section-kicker mb-5">Start a conversation</p>
+            <h2 className="display-type text-4xl font-bold tracking-[-.045em] md:text-6xl" data-testid="text-contact-title">
+              Have a good idea?<br /><span className="text-primary">Let’s make it real.</span>
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto" data-testid="text-contact-subtitle">
-              Let's build something amazing together
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg" data-testid="text-contact-subtitle">
+              Tell me what you’re building, where you’re stuck, or what you want to explore. I’ll get back to you within 24 hours.
             </p>
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 lg:grid-cols-[1.05fr_.95fr]">
           <ScrollReveal delay={100}>
-            <Card className="hover-elevate">
+            <Card className="rounded-2xl border-border/70 bg-card/75 shadow-xl shadow-primary/5">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
+                <CardTitle className="flex items-center gap-2 tracking-tight">
                   <Send className="h-5 w-5 text-primary" />
                   Send a Message
                 </CardTitle>
@@ -162,7 +163,7 @@ export default function ContactSection() {
 
           <div className="space-y-6">
             <ScrollReveal delay={150}>
-              <Card className="hover-elevate group">
+              <Card className="rounded-2xl border-border/70 bg-card/60 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5 group">
                 <CardContent className="pt-6">
                   <div className="flex items-start gap-4">
                     <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
@@ -180,7 +181,7 @@ export default function ContactSection() {
             </ScrollReveal>
 
             <ScrollReveal delay={200}>
-              <Card className="hover-elevate group">
+              <Card className="rounded-2xl border-border/70 bg-card/60 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5 group">
                 <CardContent className="pt-6">
                   <div className="flex items-start gap-4">
                     <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
@@ -198,7 +199,7 @@ export default function ContactSection() {
             </ScrollReveal>
 
             <ScrollReveal delay={250}>
-              <Card className="hover-elevate group">
+              <Card className="rounded-2xl border-border/70 bg-card/60 transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5 group">
                 <CardContent className="pt-6">
                   <div className="flex items-start gap-4">
                     <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">

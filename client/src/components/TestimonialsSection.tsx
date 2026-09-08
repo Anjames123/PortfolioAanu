@@ -29,36 +29,39 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-20 md:py-32 relative overflow-hidden">
+    <section className="relative overflow-hidden py-24 md:py-36">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent"></div>
       
-      <div className="container mx-auto px-6 relative">
+      <div className="container relative mx-auto max-w-7xl px-5 md:px-8">
         <ScrollReveal>
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/60">
-              Client Testimonials
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              What clients say about working with me
+          <div className="mb-14 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+            <div>
+              <p className="section-kicker mb-5">Good company</p>
+              <h2 className="display-type text-4xl font-bold tracking-[-.045em] md:text-6xl">
+                Kind words from<br /><span className="text-primary">the other side.</span>
+              </h2>
+            </div>
+            <p className="max-w-sm text-base leading-relaxed text-muted-foreground md:pb-1">
+              The best projects are built together. Here’s what that collaboration can feel like.
             </p>
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-5 md:grid-cols-3">
           {testimonials.map((testimonial, idx) => (
             <ScrollReveal key={idx} delay={idx * 100}>
-              <Card className="hover-elevate group relative overflow-hidden h-full">
+              <Card className="group relative h-full overflow-hidden rounded-2xl border-border/70 bg-card/70 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5">
                 <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
                   <Quote className="h-16 w-16 text-primary" />
                 </div>
-                <CardContent className="pt-6 space-y-4 relative">
-                  <div className="flex items-center gap-1 mb-2">
+                <CardContent className="relative flex h-full flex-col space-y-4 p-6 md:p-7">
+                  <div className="mb-2 flex items-center gap-1">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
                   
-                  <p className="text-muted-foreground italic leading-relaxed">
+                  <p className="flex-1 text-base leading-relaxed text-muted-foreground">
                     "{testimonial.text}"
                   </p>
                   

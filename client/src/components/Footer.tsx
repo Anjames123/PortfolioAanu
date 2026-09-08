@@ -14,28 +14,29 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t py-12 relative overflow-hidden">
+    <footer className="relative overflow-hidden border-t py-16 md:py-20">
       <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent"></div>
       
-      <div className="container mx-auto px-6 relative">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <div className="container relative mx-auto max-w-7xl px-5 md:px-8">
+        <div className="mb-14 grid grid-cols-1 gap-12 md:grid-cols-[1.5fr_.75fr_.75fr]">
           <div>
-            <h3 className="font-bold text-lg mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600">
-              Ajibade James
+            <p className="section-kicker mb-5">Let’s build what’s next</p>
+            <h3 className="display-type max-w-md text-3xl font-bold tracking-[-.045em] md:text-4xl">
+              Thoughtful work for <span className="text-primary">ambitious ideas.</span>
             </h3>
-            <p className="text-muted-foreground text-sm">
-              Building digital experiences with passion and precision.
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
+              Building digital experiences with passion, precision, and a little bit of curiosity.
             </p>
           </div>
 
           <div>
-            <h3 className="font-bold text-lg mb-4">Quick Links</h3>
-            <nav className="space-y-2">
+            <h3 className="mb-4 text-xs font-mono uppercase tracking-[0.18em] text-muted-foreground">Navigate</h3>
+            <nav className="space-y-3">
               {["about", "skills", "projects", "contact"].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className="block text-sm text-muted-foreground hover:text-primary transition-all hover:translate-x-1 capitalize"
+                  className="block text-sm capitalize text-muted-foreground transition-all hover:translate-x-1 hover:text-primary"
                   data-testid={`footer-link-${section}`}
                 >
                   {section}
@@ -45,13 +46,14 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-bold text-lg mb-4">Connect</h3>
-            <div className="flex items-center gap-4">
+            <h3 className="mb-4 text-xs font-mono uppercase tracking-[0.18em] text-muted-foreground">Connect</h3>
+            <div className="flex items-center gap-3">
               <a
                 href="https://github.com/Anjames123"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-all hover:scale-110 transform"
+                aria-label="Open GitHub profile"
+                className="rounded-full border border-border/70 p-2 text-muted-foreground transition-all hover:scale-110 hover:border-primary/40 hover:text-primary"
                 data-testid="footer-link-github"
               >
                 <Github className="h-5 w-5" />
@@ -60,14 +62,16 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/aanuoluwa-ajibade-744870261"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-all hover:scale-110 transform"
+                aria-label="Open LinkedIn profile"
+                className="rounded-full border border-border/70 p-2 text-muted-foreground transition-all hover:scale-110 hover:border-primary/40 hover:text-primary"
                 data-testid="footer-link-linkedin"
               >
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
                 href="mailto:ajibadejames19@gmail.com"
-                className="text-muted-foreground hover:text-primary transition-all hover:scale-110 transform"
+                aria-label="Send an email"
+                className="rounded-full border border-border/70 p-2 text-muted-foreground transition-all hover:scale-110 hover:border-primary/40 hover:text-primary"
                 data-testid="footer-link-email"
               >
                 <Mail className="h-5 w-5" />
@@ -77,8 +81,8 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 border-t flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground flex items-center gap-2" data-testid="text-copyright">
-            © 2025 Ajibade James. Designed & Built with <Heart className="h-4 w-4 text-red-500 fill-red-500 animate-pulse" /> and passion
+          <p className="flex items-center gap-2 text-xs text-muted-foreground" data-testid="text-copyright">
+            © 2026 Ajibade James. Designed & built with <Heart className="h-3.5 w-3.5 fill-primary text-primary" /> and intention
           </p>
           <Button
             size="icon"

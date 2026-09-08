@@ -65,29 +65,32 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
 
 export default function StatisticsSection() {
   return (
-    <section className="py-20 md:py-32 bg-muted/30 relative overflow-hidden">
+    <section className="relative overflow-hidden border-y border-border/60 bg-muted/20 py-20 md:py-28">
       <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-purple-500/10 to-primary/10"></div>
       
-      <div className="container mx-auto px-6 relative">
+      <div className="container relative mx-auto max-w-7xl px-5 md:px-8">
         <ScrollReveal>
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/60">
-              Achievements in Numbers
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Proven track record of delivering excellence
+          <div className="mb-12 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <p className="section-kicker mb-4">By the numbers</p>
+              <h2 className="display-type text-4xl font-bold tracking-[-.045em] md:text-5xl">
+                Built with purpose.
+              </h2>
+            </div>
+            <p className="max-w-xs text-sm leading-relaxed text-muted-foreground md:pb-1">
+              A track record measured in shipped work, happy collaborators, and a lot of care.
             </p>
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto">
+        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border/70 bg-border/70 md:grid-cols-4">
           {stats.map((stat, idx) => {
             const Icon = stat.icon;
             return (
               <ScrollReveal key={idx} delay={idx * 100}>
-                <div className="text-center p-6 rounded-xl bg-card hover-elevate group relative overflow-hidden">
+                <div className="group relative overflow-hidden bg-card p-5 text-center transition-colors hover:bg-card/80 md:p-7">
                   <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
-                  <div className={`inline-flex p-4 rounded-lg bg-gradient-to-br ${stat.color} bg-opacity-10 mb-4 group-hover:scale-110 transition-transform`}>
+                   <div className={`mb-4 inline-flex rounded-xl bg-gradient-to-br ${stat.color} bg-opacity-10 p-3 transition-transform group-hover:scale-110`}>
                     <Icon className="h-8 w-8 text-primary" />
                   </div>
                   <AnimatedCounter value={stat.value} suffix={stat.suffix} />
