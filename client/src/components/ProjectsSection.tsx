@@ -10,6 +10,7 @@ import mobileAppImg from "@assets/generated_images/Mobile_app_project_mockup_235
 import portfolioImg from "@assets/generated_images/Portfolio_website_project_mockup_d42c0201.png";
 import aiChatbotImg from "@assets/Screenshot 2025-10-11 164411_1760197483907.png";
 import kStyleAiImg from "@assets/Screenshot 2025-07-27 093723_1760197688959.png";
+import jobPortalImg from "@assets/Screenshot 2025-08-08 212006_1760197174128.png";
 
 const projects = [
   {
@@ -53,6 +54,19 @@ const projects = [
   },
   {
     id: 4,
+    title: "Jobsito",
+    category: "Full Stack",
+    description: "A complete job portal for posting roles, applying with resumes, and tracking application progress.",
+    image: jobPortalImg,
+    tags: ["PHP", "MySQL", "Bootstrap", "PDO"],
+    repoUrl: "https://github.com/Anjames123/jobsito",
+    longDescription: "Jobsito is a full job portal with separate applicant and administrator workflows, from account creation and job search through application review and status updates.",
+    challenge: "Bringing job discovery, secure applications, document uploads, and administration into one straightforward experience.",
+    solution: "Built a PHP application with PDO-backed MySQL data, role-aware dashboards, search and filtering, validated resume uploads, and prepared statements.",
+    outcome: "A practical recruitment workflow that helps applicants track their progress while giving administrators control over jobs and applications.",
+  },
+  {
+    id: 5,
     title: "Greater Seeds Academy",
     category: "Web Design",
     description: "A warm, responsive school website for Greater Seeds Richmaris Academy in Kuje, Abuja.",
@@ -91,7 +105,7 @@ export default function ProjectsSection() {
         <ScrollReveal>
           <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
-              <p className="section-kicker mb-5">Selected work / 01—04</p>
+              <p className="section-kicker mb-5">Selected work / 01—05</p>
               <h2 className="display-type text-4xl font-bold tracking-[-.045em] md:text-6xl" data-testid="text-projects-title">
                 Work that moves<br /><span className="text-primary">ideas forward.</span>
               </h2>
