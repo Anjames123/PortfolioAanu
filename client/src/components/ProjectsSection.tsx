@@ -6,96 +6,81 @@ import { ExternalLink, Github } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import ProjectDetailModal from "./ProjectDetailModal";
 
-import ecommerceImg from "@assets/generated_images/E-commerce_project_mockup_1dfea28f.png";
 import mobileAppImg from "@assets/generated_images/Mobile_app_project_mockup_235b9cef.png";
 import dashboardImg from "@assets/generated_images/Analytics_dashboard_project_mockup_2dcfc278.png";
 import portfolioImg from "@assets/generated_images/Portfolio_website_project_mockup_d42c0201.png";
-import taskManagementImg from "@assets/generated_images/Task_management_app_mockup_736091a1.png";
-import socialMediaImg from "@assets/generated_images/Social_media_platform_mockup_8ae26d3c.png";
-import jobPortalImg from "@assets/Screenshot 2025-08-08 212006_1760197174128.png";
 import aiChatbotImg from "@assets/Screenshot 2025-10-11 164411_1760197483907.png";
 import kStyleAiImg from "@assets/Screenshot 2025-07-27 093723_1760197688959.png";
 
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
+    title: "Campus SafeWalk",
     category: "Full Stack",
-    description: "Modern e-commerce solution with real-time inventory and payment processing",
-    image: ecommerceImg,
-    tags: ["React", "Node.js", "PostgreSQL", "Stripe"],
-    longDescription: "A comprehensive e-commerce platform built with modern technologies to deliver seamless shopping experiences. Features include real-time inventory management, secure payment processing, and responsive design.",
-    challenge: "Building a scalable e-commerce solution that handles high traffic, processes secure payments, and manages complex inventory in real-time.",
-    solution: "Implemented a microservices architecture using React for the frontend and Node.js for the backend. Integrated Stripe for secure payment processing and PostgreSQL for robust data management.",
-    outcome: "Successfully launched platform serving 10,000+ users with 99.9% uptime. Reduced page load time by 40% and increased conversion rate by 25%.",
+    description: "A student safety platform for campus communities with live updates, secure accounts, and a React interface.",
+    image: mobileAppImg,
+    tags: ["React", "FastAPI", "PostgreSQL", "Socket.IO"],
+    repoUrl: "https://github.com/Anjames123/Campus-SafeWalk",
+    longDescription: "Campus SafeWalk pairs a React and TypeScript frontend with a Python FastAPI backend to help students move through campus with more confidence.",
+    challenge: "Designing a safety product that feels calm and approachable while handling identity, live communication, and location-sensitive workflows.",
+    solution: "Built a standalone frontend/backend architecture with JWT authentication, PostgreSQL persistence, and Socket.IO-powered real-time updates.",
+    outcome: "A full-stack safety experience with a clear path from sign-in to live campus support.",
   },
   {
     id: 2,
-    title: "Mobile Banking App",
-    category: "Mobile",
-    description: "Secure fintech application with biometric authentication and analytics",
-    image: mobileAppImg,
-    tags: ["React Native", "Firebase", "TypeScript"],
+    title: "K-Style AI Beauty",
+    category: "AI Product",
+    description: "AI beauty companion for personal color analysis, styling, recommendations, and multilingual guidance.",
+    image: kStyleAiImg,
+    tags: ["React", "TypeScript", "Gemini", "PostgreSQL"],
+    repoUrl: "https://github.com/Anjames123/KoreanBeautyTrends",
+    longDescription: "K-Style AI Beauty brings personal color analysis, style recommendations, hair and lipstick guidance, and an AI beauty consultant into one responsive product.",
+    challenge: "Making AI recommendations feel personal, culturally aware, and useful across different languages and beauty goals.",
+    solution: "Combined a typed React experience with PostgreSQL-backed user data, role-based access, multilingual content, and cost-aware Gemini/Hugging Face integrations.",
+    outcome: "A rich AI product concept with localization, analytics, tutorials, and a strong consumer-facing experience.",
   },
   {
     id: 3,
-    title: "Analytics Dashboard",
-    category: "Web Design",
-    description: "Business intelligence dashboard with interactive data visualization",
-    image: dashboardImg,
-    tags: ["React", "D3.js", "Tailwind CSS"],
+    title: "ChatPyBot",
+    category: "AI Product",
+    description: "A Streamlit chatbot that brings OpenAI, Anthropic, and Gemini models into one focused workspace.",
+    image: aiChatbotImg,
+    tags: ["Python", "Streamlit", "Multi-LLM", "SQLAlchemy"],
+    repoUrl: "https://github.com/Anjames123/ChatPyBot",
+    longDescription: "ChatPyBot is a multi-provider AI chatbot that lets users work with OpenAI, Anthropic, and Google Gemini from a single Streamlit interface.",
+    challenge: "Creating a simple chat experience while keeping provider selection, configuration, and conversation persistence understandable.",
+    solution: "Built a Python application with provider-specific clients, environment-based configuration, and SQLAlchemy-backed storage.",
+    outcome: "A practical multi-model playground that keeps the interface simple while leaving room for different AI providers.",
   },
   {
     id: 4,
-    title: "Portfolio Website",
+    title: "Greater Seeds Academy",
     category: "Web Design",
-    description: "Creative portfolio showcasing artistic work with smooth animations",
+    description: "A warm, responsive school website for Greater Seeds Richmaris Academy in Kuje, Abuja.",
     image: portfolioImg,
-    tags: ["Next.js", "Framer Motion", "Vercel"],
+    tags: ["PHP", "JavaScript", "CSS", "Responsive UI"],
+    repoUrl: "https://github.com/Anjames123/SchoolPortal",
+    longDescription: "A school website designed to introduce Greater Seeds Richmaris Academy, its programs, events, gallery, and contact information to families.",
+    challenge: "Turning a lot of school information into an approachable experience that works equally well for parents and prospective students.",
+    solution: "Created a responsive PHP site with a hero slider, section-based navigation, program content, events, gallery, and contact touchpoints.",
+    outcome: "A clear digital front door for the school with an inviting, family-friendly presentation.",
   },
   {
     id: 5,
-    title: "Task Management System",
+    title: "PortfolioAanu",
     category: "Full Stack",
-    description: "Collaborative project management tool with real-time updates",
-    image: taskManagementImg,
-    tags: ["Vue.js", "Express", "WebSocket"],
-  },
-  {
-    id: 6,
-    title: "Social Media Platform",
-    category: "Full Stack",
-    description: "Community-driven platform with content sharing and social features",
-    image: socialMediaImg,
-    tags: ["React", "GraphQL", "MongoDB"],
-  },
-  {
-    id: 7,
-    title: "Job Portal",
-    category: "Full Stack",
-    description: "Career platform for discovering job opportunities with advanced search and application tracking",
-    image: jobPortalImg,
-    tags: ["PHP", "JavaScript", "HTML", "MySQL"],
-  },
-  {
-    id: 8,
-    title: "K-Style AI Beauty",
-    category: "Full Stack",
-    description: "AI-powered beauty platform for personalized color analysis and K-drama styling recommendations",
-    image: kStyleAiImg,
-    tags: ["Python", "TensorFlow", "React", "Computer Vision"],
-  },
-  {
-    id: 10,
-    title: "ChatPyBot",
-    category: "Full Stack",
-    description: "Multi-LLM chatbot with Streamlit UI supporting OpenAI, Anthropic, and Gemini APIs with SQLite storage",
-    image: aiChatbotImg,
-    tags: ["Python", "Streamlit", "SQLAlchemy", "Multi-AI"],
+    description: "The portfolio platform itself — a React, TypeScript, and Express experience built to show the work behind the work.",
+    image: dashboardImg,
+    tags: ["React", "TypeScript", "Express", "Drizzle"],
+    repoUrl: "https://github.com/Anjames123/PortfolioAanu",
+    longDescription: "PortfolioAanu is the living portfolio experience: a full-stack site for presenting projects, skills, experience, and a working contact flow.",
+    challenge: "Making a personal portfolio feel like a real product rather than a list of links.",
+    solution: "Built a responsive React frontend with a TypeScript Express server, structured project stories, theme support, and a validated contact endpoint.",
+    outcome: "A distinct portfolio system that can evolve alongside the work it represents.",
   },
 ];
 
-const categories = ["All", "Full Stack", "Web Design", "Mobile"];
+const categories = ["All", "Full Stack", "AI Product", "Web Design"];
 
 export default function ProjectsSection() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -165,15 +150,25 @@ export default function ProjectsSection() {
                       className={`w-full object-cover transition-all duration-700 group-hover:scale-105 ${idx === 0 ? "h-64 lg:h-full lg:min-h-[22rem]" : "h-56"}`}
                       data-testid={`img-project-${project.id}`}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end justify-center pb-6 gap-2">
+                      <div className="absolute inset-0 flex items-end justify-center gap-2 bg-gradient-to-t from-background via-background/50 to-transparent pb-6 opacity-0 transition-all duration-300 group-hover:opacity-100">
                       <Button size="sm" variant="secondary" className="shadow-lg backdrop-blur-sm" data-testid={`button-view-project-${project.id}`}>
                         <ExternalLink className="h-4 w-4 mr-2" />
-                        View
+                          Details
                       </Button>
-                      <Button size="sm" variant="secondary" className="shadow-lg backdrop-blur-sm">
-                        <Github className="h-4 w-4 mr-2" />
-                        Code
-                      </Button>
+                        {project.repoUrl && (
+                          <Button
+                            size="sm"
+                            variant="secondary"
+                            className="shadow-lg backdrop-blur-sm"
+                            asChild
+                            onClick={(event) => event.stopPropagation()}
+                          >
+                            <a href={project.repoUrl} target="_blank" rel="noopener noreferrer">
+                              <Github className="mr-2 h-4 w-4" />
+                              GitHub
+                            </a>
+                          </Button>
+                        )}
                     </div>
                   </div>
                   <CardContent className={`space-y-4 p-6 md:p-7 ${idx === 0 ? "lg:flex lg:flex-col lg:justify-center" : ""}`}>
